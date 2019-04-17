@@ -1,1 +1,11 @@
 buildPack: maven
+pipelineConfig:
+  agent: {}
+  env:
+  - name: GIT_AUTHOR_NAME
+    value: jstrachan
+  pipelines:
+    release:
+      setup:
+        preSteps:
+        - sh: echo "my name is $GIT_AUTHOR_NAME"
